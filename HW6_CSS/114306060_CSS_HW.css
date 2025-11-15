@@ -1,0 +1,166 @@
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #eeeeee;
+	font-family: Arial, sans-serif;
+}
+.main-container{
+	width: 1200px;
+	background-color: #FFFFFF;
+	border-radius: 10px;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+	display: flex;
+	overflow: hidden;
+}
+
+.left-panel{
+	width: 30%;
+	background-color: #3388BB;
+
+}
+
+.photo-panel img{
+	width: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.text-content{
+	color: white;
+	padding: 5px 20px;
+}
+
+.text-content h1{
+	padding-bottom: 0px;
+	margin-bottom: 3px;
+	font-size: 28pt;
+}
+.text-content h2{
+	border-bottom: 2px solid white;
+	padding-bottom: 5px;
+	margin-left: 0px;
+	margin-top: 40px;
+	font-size: 20pt;
+}
+
+.text-content p{
+	font-size: 13pt;
+	margin: 5px;
+}
+
+.nccu-logo{
+	margin-top: 50px;
+	width: 80%;
+}
+
+
+
+
+.right-panel{
+	width: 70%;
+	padding: 30px 40px;
+}
+
+.section{
+	margin-bottom: 30px;
+}
+
+.section-title{
+	border-bottom: 2px solid #eeeeee;
+	padding-bottom: 5px;
+	margin-bottom: 20px;
+}
+
+.timeline-item{
+	display: flex;
+	margin-bottom: 10px;
+}
+
+.year{
+	width: 150px;
+	font-weight: bold;
+}
+
+.description{
+	color: #555555;
+}
+
+.tag{
+	display: inline-block;
+	background-color: #19B1F6;
+	color: white;
+	font-weight: bold;
+	padding: 5px 10px;
+	border-radius: 20px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+
+.hw-lab-container{
+	display: flex;
+}
+
+.card-style{
+	background-color: #F1E3E1;
+	border-radius: 8px;
+	padding: 5px 20px;
+	flex:1;
+	color: grey;
+}
+
+.hw-column{
+	margin-right: 10px;
+}
+.lab-column{
+	margin-left: 10px;
+}
+
+.card-style ul{
+	list-style: none;
+	padding-left: 0;
+}
+
+.card-style a{
+	text-decoration: none;
+	color: #A5469D;
+}
+
+.card-style a:hover{
+	text-decoration: underline;
+}
+
+.music-container{
+	display: flex;
+	justify-content: space-around;
+}
+
+.music-item{
+	text-align: center;
+	text-decoration: none;
+	color: #333333;
+	font-weight: bold;
+}
+
+.music-item img{
+	width: 40pt;
+	height: 40pt;
+
+	border-radius: 50%;
+}
+
+.music-item sup{
+	color: gray;
+}
+
+.song-title{
+	display: block;
+	margin-top: 10px;
+	font-size: 14px;
+}
+
+.music-note{
+	text-align: center;
+	margin-top: 20px;
+	color: #777777;
+}
