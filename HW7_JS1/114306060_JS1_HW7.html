@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function generateAnswer(){
+            var digits = [0,1,2,3,4,5,6,7,8,9];
+            var ans = "";
+            for (var i = 0; i < 4; i++){
+                var idx = Math.floor(Math.random() * digits.length);
+                ans += digits[idx];
+                digits.splice(idx, 1);
+            }
+            return ans;
+        }
+
+        function isValid(inputStr){
+            if (inputStr.length != 4) return false; //確認長度是否等於4
+            if (isNaN(inputStr)) return false; //確認是否為數字
+            var uniqueCheck = new Set(inputStr); //確認是否有重複數字
+            if (uniqueCheck.size !== 4) return false;
+
+            return true;
+        }
+
+        function checkAB(guess, answer){
+            var A = 0;
+            var B = 0;
+
+            for (var i = 0; i < 4; i++){
+                if (guess[i] === answer[i]){
+                    A++;
+                } else if (answer.includes(guess[i])){
+                    B++;
+                }
+            }
+
+            return A + "A" + B + "B";
+        }
+    </script>
+    
+    <h1>114306060_HW6_1A2B</h1>
+    <input type="text" id="guessInput" placeholder="請輸入4個不重複數字">
+    <button onclick="play()">Guess!</button>
+
+    <div id="gameRecoeds">
+        Game Record:<br>
+    </div>
+
+    <script>
+        var answer = generateAnswer();
+        var count = 0;
+        
+        function play(){
+            var inputObj = document.getElementById("guessInput");
+            var guess = inputObj.value;
+
+            //驗證
+
+            if (!isValid(guess)){
+                alert("輸入錯誤，請輸入4個不重複數字");
+                inputObj.value ="";
+                return;
+            }
+
+            var result = checkAB(guess, answer);
+            count++;
+
+            var recordDiv = document.getElementById("gameRecoeds");
+            recordDiv.innerHTML += "第" + count + "次猜測: " + guess + " => " + result + "<br>";
+
+            if (result === "4A0B"){
+                alert("恭喜答對！答案是 " + answer + "。總共猜了 " + count + " 次。");
+            }
+
+            inputObj.value = "";
+        }
+
+    </script>
+</body>
+</html>
